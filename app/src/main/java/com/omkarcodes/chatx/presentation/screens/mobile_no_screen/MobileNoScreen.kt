@@ -119,7 +119,8 @@ fun MobileNoScreen(navController: NavController) {
                             disabledTextColor = Color.Transparent,
                             focusedIndicatorColor = Color.Transparent,
                             unfocusedIndicatorColor =  Color.Transparent,
-                            disabledIndicatorColor =  Color.Transparent
+                            disabledIndicatorColor =  Color.Transparent,
+                            backgroundColor = colorLightBackground2
                         ),
                         textStyle = MaterialTheme.typography.caption,
                         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone),

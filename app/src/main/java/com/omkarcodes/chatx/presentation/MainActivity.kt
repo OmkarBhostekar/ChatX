@@ -10,6 +10,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navArgument
 import androidx.navigation.compose.rememberNavController
+import com.omkarcodes.chatx.presentation.screens.edit_profile_screen.EditProfileScreen
 import com.omkarcodes.chatx.presentation.screens.mobile_no_screen.MobileNoScreen
 import com.omkarcodes.chatx.presentation.screens.otp_screen.OtpScreen
 import com.omkarcodes.chatx.presentation.ui.theme.ChatXTheme
@@ -38,6 +39,11 @@ class MainActivity : ComponentActivity() {
                             arguments = listOf(navArgument("phoneNo") { type = NavType.StringType })
                         ){ backStackEntry ->
                             OtpScreen(navController = navController,backStackEntry.arguments?.getString("phoneNo"))
+                        }
+                        composable(
+                            route = Screen.EditProfileScreen.route
+                        ){
+                            EditProfileScreen(navController = navController)
                         }
                     }
                 }
