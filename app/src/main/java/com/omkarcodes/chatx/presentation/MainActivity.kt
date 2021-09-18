@@ -20,6 +20,8 @@ import com.omkarcodes.chatx.presentation.screens.auth.MobileNoScreen
 import com.omkarcodes.chatx.presentation.screens.auth.OtpScreen
 import com.omkarcodes.chatx.presentation.screens.auth.WelcomeScreen
 import com.omkarcodes.chatx.presentation.screens.home.ChatScreen
+import com.omkarcodes.chatx.presentation.screens.home.ContactsScreen
+import com.omkarcodes.chatx.presentation.screens.home.MoreScreen
 import com.omkarcodes.chatx.presentation.screens.profile.EditProfileScreen
 import com.omkarcodes.chatx.presentation.ui.theme.ChatXTheme
 
@@ -55,7 +57,7 @@ class MainActivity : ComponentActivity() {
 fun Navigation(navController: NavHostController) {
     NavHost(
         navController = navController,
-        startDestination = NavigationItem.Chats.route
+        startDestination = NavigationItem.More.route
     ) {
         composable(Screen.WelcomeScreen.route){
             WelcomeScreen(navController = navController)
@@ -75,17 +77,13 @@ fun Navigation(navController: NavHostController) {
             EditProfileScreen(navController = navController)
         }
         composable(NavigationItem.Contacts.route){
-            Scaffold {
-
-            }
+            ContactsScreen(navController)
         }
         composable(NavigationItem.Chats.route){
             ChatScreen(navController)
         }
         composable(NavigationItem.More.route){
-            Scaffold {
-
-            }
+            MoreScreen(navController)
         }
     }
 }

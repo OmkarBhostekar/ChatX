@@ -22,7 +22,7 @@ import com.omkarcodes.chatx.presentation.ui.theme.colorLightText
 @Composable
 fun CustomTopBar(
     title: String,
-    actions: List<TopBarAction>
+    actions: List<TopBarAction> = emptyList()
 ) {
     Row(
         modifier = Modifier
