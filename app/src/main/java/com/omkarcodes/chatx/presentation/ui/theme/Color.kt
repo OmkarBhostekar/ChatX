@@ -13,6 +13,8 @@ val colorBlue300 = Color(0xFF375EFE)
 val colorBlue200 = Color(0xFF879EFE)
 val colorBlue20 = Color(0xFFD2D5F9)
 
+val colorActiveGreen = Color(0xFF2CC069)
+
 val ColorLightBackground = Color(0xFFFFFFFF)
 val colorLightText = Color(0xFF0E1829)
 val colorLightBackground2 = Color(0xFFF7F7FC)
