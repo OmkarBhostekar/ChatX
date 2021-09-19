@@ -19,6 +19,7 @@ import com.omkarcodes.chatx.presentation.model.NavigationItem
 import com.omkarcodes.chatx.presentation.screens.auth.MobileNoScreen
 import com.omkarcodes.chatx.presentation.screens.auth.OtpScreen
 import com.omkarcodes.chatx.presentation.screens.auth.WelcomeScreen
+import com.omkarcodes.chatx.presentation.screens.home.ChatListScreen
 import com.omkarcodes.chatx.presentation.screens.home.ChatScreen
 import com.omkarcodes.chatx.presentation.screens.home.ContactsScreen
 import com.omkarcodes.chatx.presentation.screens.home.MoreScreen
@@ -57,7 +58,7 @@ class MainActivity : ComponentActivity() {
 fun Navigation(navController: NavHostController) {
     NavHost(
         navController = navController,
-        startDestination = NavigationItem.More.route
+        startDestination = Screen.WelcomeScreen.route
     ) {
         composable(Screen.WelcomeScreen.route){
             WelcomeScreen(navController = navController)
@@ -76,11 +77,17 @@ fun Navigation(navController: NavHostController) {
         ){
             EditProfileScreen(navController = navController)
         }
+        composable(
+            route = Screen.ChatScreen.route + "/{name}",
+            arguments = listOf(navArgument("name") { type = NavType.StringType })
+        ){  backStackEntry ->
+            ChatScreen(navController = navController,backStackEntry.arguments?.getString("name"))
+        }
         composable(NavigationItem.Contacts.route){
             ContactsScreen(navController)
         }
         composable(NavigationItem.Chats.route){
-            ChatScreen(navController)
+            ChatListScreen(navController)
         }
         composable(NavigationItem.More.route){
             MoreScreen(navController)

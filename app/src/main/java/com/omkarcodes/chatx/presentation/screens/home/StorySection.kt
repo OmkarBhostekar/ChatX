@@ -5,6 +5,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -60,10 +61,10 @@ fun YourStory() {
                 .border(
                     width = 2.dp,
                     color = colorGrey2,
-                    shape = RoundedCornerShape(20.dp)
+                    shape = CircleShape
                 )
                 .padding(3.dp)
-                .clip(RoundedCornerShape(20.dp))
+                .clip(CircleShape)
         ) {
             Image(
                 painter = painterResource(id = R.drawable.ic_add),
@@ -111,10 +112,10 @@ fun Story(
                 .border(
                     width = 2.dp,
                     brush = borderColor,
-                    shape = RoundedCornerShape(20.dp)
+                    shape = CircleShape
                 )
                 .padding(3.dp)
-                .clip(RoundedCornerShape(20.dp))
+                .clip(CircleShape)
         ) {
             Image(
                 painter = painterResource(id = story.image),
